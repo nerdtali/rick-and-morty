@@ -1,9 +1,8 @@
 package cl.nmc.characters.controllers;
 
-import cl.nmc.characters.models.Character;
+
 import cl.nmc.characters.response.CharacterLocationResponse;
 import cl.nmc.characters.services.ICharactersService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +17,10 @@ public class CharactersController {
 
     @Autowired
     private ICharactersService characterService;
+
+    public CharactersController(ICharactersService charactersService){
+        this.characterService = charactersService;
+    }
 
     @GetMapping("/v1/character/{id}/location")
     public ResponseEntity<CharacterLocationResponse> getCharacterAndLocation(@PathVariable(name = "id") int id){

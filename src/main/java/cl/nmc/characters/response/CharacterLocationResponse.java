@@ -1,19 +1,21 @@
 package cl.nmc.characters.response;
 
-import cl.nmc.characters.models.common.Extra;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import cl.nmc.characters.domain.common.Extra;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
 @Getter
 @Setter
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class CharacterLocationResponse {
     private int id;
     private String name;
     private String status;
     private String species;
     private String type;
-    private int episode_count;
+    @JsonProperty("episode_count")
+    private int episodeCount;
     private Extra origin;
 }

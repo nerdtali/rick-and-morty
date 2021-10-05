@@ -1,16 +1,15 @@
-package cl.nmc.characters.models;
+package cl.nmc.characters.domain;
 
-import cl.nmc.characters.models.common.Extra;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import cl.nmc.characters.domain.common.Extra;
+import lombok.*;
 import java.io.Serializable;
 import java.util.Date;
 
 @Getter
 @Setter
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class Character implements Serializable {
     private int id;
     private String name;

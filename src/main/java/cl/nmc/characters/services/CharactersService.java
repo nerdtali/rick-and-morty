@@ -1,8 +1,8 @@
 package cl.nmc.characters.services;
 
-import cl.nmc.characters.models.Character;
-import cl.nmc.characters.models.Location;
-import cl.nmc.characters.models.common.Extra;
+import cl.nmc.characters.domain.Character;
+import cl.nmc.characters.domain.Location;
+import cl.nmc.characters.domain.common.Extra;
 import cl.nmc.characters.repository.ICharactersRepository;
 import cl.nmc.characters.response.CharacterLocationResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +18,10 @@ public class CharactersService implements ICharactersService {
     private ICharactersRepository charactersRepository;
 
     Logger logger = Logger.getLogger(CharactersService.class.getName());
+
+    public CharactersService(ICharactersRepository charactersRepository){
+        this.charactersRepository = charactersRepository;
+    }
 
     public CharacterLocationResponse getCharacterAndLocation(String id) {
 
@@ -35,7 +39,7 @@ public class CharactersService implements ICharactersService {
             response.setStatus(character.getStatus());
             response.setSpecies(character.getSpecies());
             response.setType(character.getType());
-            response.setEpisode_count(character.getEpisode().length);
+            response.setEpisodeCount(character.getEpisode().length);
 
             Extra origin = new Extra();
             origin.setName(location.getName());

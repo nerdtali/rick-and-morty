@@ -1,7 +1,7 @@
 package cl.nmc.characters.repository;
 
-import cl.nmc.characters.models.Character;
-import cl.nmc.characters.models.Location;
+import cl.nmc.characters.domain.Character;
+import cl.nmc.characters.domain.Location;
 
 public interface ICharactersRepository {
 

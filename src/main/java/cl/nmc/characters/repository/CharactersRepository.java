@@ -1,7 +1,7 @@
 package cl.nmc.characters.repository;
 
-import cl.nmc.characters.models.Character;
-import cl.nmc.characters.models.Location;
+import cl.nmc.characters.domain.Character;
+import cl.nmc.characters.domain.Location;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
